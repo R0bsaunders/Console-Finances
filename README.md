@@ -39,3 +39,11 @@ All Javascript can be found in the ![index.js](/index.js) file. For the purposes
 
 Open the ![index.html](/index.html) file
 Open the console to view the result of the code
+
+This is a screenshot of the result:
+
+![screenshot-console](/images/console-screenshot.jpg)
+
+Git Repo: https://github.com/R0bsaunders/Console-Finances
+
+Live version: https://r0bsaunders.github.io/Console-Finances/
