@@ -1,5 +1,5 @@
 // Unit 4: Console Finances
-//Below you will see the data set. Below that, commetns that intorudce the requirement followed by the pseudocode used to represent the logical steps required to complete the task
+//Below you will see the data set. Below that, comments that introduce the requirement followed by the pseudocode used to represent the logical steps required to complete the task
 
 
 var finances = [
@@ -95,7 +95,7 @@ var finances = [
 
 console.log(`Financial Analysis\n--------------------------`);
 
-// Criteria #1: Total number of months included in the datasheet
+// Criteria #1: Total number of months included in the dataset
     //Determine the length of the finances array
     //Display in console
 
@@ -103,7 +103,7 @@ console.log(`Total Months: ${finances.length}`); //86
 
 // Criteria #2: The net total amount of Profit/Losses over the entire period.
     // New variable to store the total
-    // For-loop to cycle through the two-dimentional array, adding the [0][1] value each time to the previous total
+    // For-loop to cycle through the two-dimensional array, adding the [0][1] value each time to the previous total
 
 var totalProfit = 0;
 for(i = 0; i < finances.length; i++) {
@@ -142,13 +142,13 @@ for(i = 0; i < finances.length; i++) {
     if(highestProfit < finances[i][1]) {
 
         highestProfit = finances[i][1];
-        var highestProfitMonth = finances[i][0];
+        highestProfitMonth = finances[i][0];
     };
 
     if(lowestProfit > finances[i][1]) {
 
         lowestProfit = finances[i][1];
-        var lowestProfitMonth = finances[i][0];
+        lowestProfitMonth = finances[i][0];
     };
 };
 
