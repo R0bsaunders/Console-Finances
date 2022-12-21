@@ -91,53 +91,21 @@ var finances = [
     ['Feb-2017', 671099]
     ];
 
-//Logs financial analysis line
 
-console.log(`Financial Analysis\n--------------------------`);
-
-// Criteria #1: Total number of months included in the dataset
-    //Determine the length of the finances array
-    //Display in console
-
-console.log(`Total Months: ${finances.length}`); //86
-
-// Criteria #2: The net total amount of Profit/Losses over the entire period.
-    // New variable to store the total
-    // For-loop to cycle through the two-dimensional array, adding the [0][1] value each time to the previous total
-
-var totalProfit = 0;
-for(i = 0; i < finances.length; i++) {
+    var totalProfit = 0;
+    var highestProfit = 0;
+    var lowestProfit = 0;
+    var averageProfitLoss = 0;
+    
+for(var i = 0; i < finances.length; i++) {
 
     totalProfit += finances[i][1];
 
-};
-console.log(`Total: $${totalProfit}`); // 38382578
-
-// Criteria #3: The average of the changes in Profit/Losses over the entire period.
-    //Declare a variable starting with 0.
-    //Work out the difference between the second to the first value and add it to the variable
-    //Loop this process until the last value of the internal array has been added to the variable
-
-var totalProfitLoss = 0;
-
-for(i = 1; i < finances.length; i++) {
-
-    totalProfitLoss += (finances[i][1] - finances[i-1][1]);
-
-};
-
-totalProfitLoss = (totalProfitLoss / (finances.length-1));
-
-console.log(`Average Change: $${totalProfitLoss.toFixed(2)}`);
-
-// Criteria #4 & #5 (can be done within same for-loop): The greatest increase in profits (date and amount) over the entire period.
-    // Declare a variable with starting value of '0' to store the greatest change
-    // Use a loop and cycle through each value, only storing the value (with it's month) if it is greater than the currently stored value. The highest value will what remains, regardless of where it was in the array
-
-var highestProfit = 0;
-var lowestProfit = 0;
-
-for(i = 0; i < finances.length; i++) {
+    for(j = 1 ; j < finances.length; j++) {
+        averageProfitLoss += (finances[j][1] - finances[j-1][1]);
+    };
+    
+    averageProfitLoss = (averageProfitLoss / finances.length);
 
     if(highestProfit < finances[i][1]) {
 
@@ -150,10 +118,17 @@ for(i = 0; i < finances.length; i++) {
         lowestProfit = finances[i][1];
         lowestProfitMonth = finances[i][0];
     };
+
+    
 };
 
 console.log(
-
-    `Greatest Increase in Profits: ${highestProfitMonth} ($${highestProfit})\nGreatest Decrease in Profits: ${lowestProfitMonth} ($${lowestProfit})`
-
-    );
+    "Financial Analysis\n--------------------------\n" +
+    `Total Months: ${finances.length}\n` +
+    `Total: $${totalProfit}\n` +
+    `Average Change: $${averageProfitLoss.toFixed(2)}\n` +
+    `Greatest Increase in Profits: ${highestProfitMonth} ($${highestProfit})\n` +
+    `Greatest Decrease in Profits: ${lowestProfitMonth} ($${lowestProfit})\n` +
+    `--------------------------`
+);
+    
