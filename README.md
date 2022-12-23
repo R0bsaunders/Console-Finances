@@ -35,6 +35,8 @@ Your final code should print the analysis to the console.-+
 
 ## Usage
 
+I have separated out the data from the 
+
 All Javascript can be found in the ![index.js](/index.js) file. For the purposes of this challenge, I have written the necessary code in sections to satisfy each criteria. While there may be a way to complete the whole code in one algorithm, I am demonstrating the mathematical and logical understanding required for each criteria.
 
 Open the ![index.html](/index.html) file
