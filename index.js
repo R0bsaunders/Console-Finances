@@ -93,42 +93,45 @@ var finances = [
 
 
     var totalProfit = 0;
-    var highestProfit = 0;
-    var lowestProfit = 0;
+    var maxProfit = 0;
+    var minProfit = 0;
     var averageProfitLoss = 0;
+    var totalProfitLoss = 0;
     
-for(var i = 0; i < finances.length; i++) {
+for (var i = 0; i < finances.length; i++) {
 
     totalProfit += finances[i][1];
 
-    for(j = 1 ; j < finances.length; j++) {
-        averageProfitLoss += (finances[j][1] - finances[j-1][1]);
+    if (i > 0) {
+
+        totalProfitLoss += (finances[i][1] - finances[i-1][1]);
+
+        profitDelta = (finances[i][1] - finances[i-1][1]);
+
+        if (profitDelta > maxProfit) {
+
+            maxProfit = profitDelta;
+            maxProfitMonth = finances[i][0];
+
+        } else if (profitDelta < minProfit) {
+
+            minProfit = profitDelta;
+            minProfitMonth = finances[i][0];
+        };
+
     };
-    
-    averageProfitLoss = (averageProfitLoss / finances.length);
 
-    if(highestProfit < finances[i][1]) {
-
-        highestProfit = finances[i][1];
-        highestProfitMonth = finances[i][0];
-    };
-
-    if(lowestProfit > finances[i][1]) {
-
-        lowestProfit = finances[i][1];
-        lowestProfitMonth = finances[i][0];
-    };
-
-    
 };
+
+averageProfitLoss = (totalProfitLoss / (finances.length -1));
 
 console.log(
     "Financial Analysis\n--------------------------\n" +
     `Total Months: ${finances.length}\n` +
     `Total: $${totalProfit}\n` +
     `Average Change: $${averageProfitLoss.toFixed(2)}\n` +
-    `Greatest Increase in Profits: ${highestProfitMonth} ($${highestProfit})\n` +
-    `Greatest Decrease in Profits: ${lowestProfitMonth} ($${lowestProfit})\n` +
+    `Greatest Increase in Profits: ${maxProfitMonth} ($${maxProfit})\n` +
+    `Greatest Decrease in Profits: ${minProfitMonth} ($${minProfit})\n` +
     `--------------------------`
 );
     
