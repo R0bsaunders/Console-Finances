@@ -35,9 +35,9 @@ Your final code should print the analysis to the console.-+
 
 ## Usage
 
-I have separated out the data from the 
+I have separated out the data from the index.js file. Data is found in the ![data.js](/data.js) file. 
 
-All Javascript can be found in the ![index.js](/index.js) file. For the purposes of this challenge, I have written the necessary code in sections to satisfy each criteria. While there may be a way to complete the whole code in one algorithm, I am demonstrating the mathematical and logical understanding required for each criteria.
+All Javascript can be found in the ![index.js](/index.js) file. I have aggregated all sums into one 'for' loop and worked out the average change in profits outside of the loop following best practice. 
 
 Open the ![index.html](/index.html) file
 Open the console to view the result of the code
