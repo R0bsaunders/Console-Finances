@@ -26,9 +26,9 @@ for (var i = 0; i < finances.length; i++) {
 
     if (i > 0) {
 
-        totalProfitLoss += (finances[i][1] - finances[i-1][1]);
-
         profitDelta = (finances[i][1] - finances[i-1][1]);
+
+        totalProfitLoss += profitDelta;
 
         if (profitDelta > maxProfit) {
 
